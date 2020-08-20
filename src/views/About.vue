@@ -28,14 +28,19 @@
                 state.aaa = 44444
             }
             onMounted(() => {
+                getList();
+                getList2();
+            })
+
+            let getList = async () => {
                 console.log(prpos);
-                root.$axios.get('/api/v1/cmm/hot/products',{size: 20, idx: 1, count: 20})
+                await root.$axios.get('/api/v1/cmm/hot/products',{size: 20, idx: 1, count: 20})
                     .then((res) => {
-                        console.log(res);
+                        console.log(res,11111111111);
                     })
                     .then(() => {
                         // console.log(4444);
-                        console.log(root.$route.matched);
+                        console.log(root.$route.matched,2222222222);
                     })
                     .then(() => {
                         // console.log(55555);
@@ -46,7 +51,20 @@
                     .catch((e) => {
                         console.log(e);
                     })
-            })
+               let data =  await root.$axios.get('/api/v1/cmm/hot/products',{size: 20, idx: 1, count: 20});
+               await root.$axios.get('/api/v1/cmm/hot/products',{size: 20, idx: 1, count: 20, mobile: data[0].mobile});
+            }
+
+            let getList2 = () => {
+                root.$axios.get('/api/v1/cmm/hot/products',{size: 20, idx: 1, count: 20})
+                    .then((res) => {
+                        console.log(res,333333333333);
+                    })
+                    .catch((e) => {
+                        console.log(e);
+                    })
+                console.log(4444444444444444);
+            }
             return {
                 ...toRefs(state),
                 data: computed(() => root.$store.getters['Vuextest/getData']),
