@@ -28,9 +28,9 @@
                 state.aaa = 44444
             }
             onMounted(() => {
-                // getList();
-                // getList2();
-                getList3();
+                getList();
+                getList2();
+                // getList3();
             })
 
             let getList = async () => {
