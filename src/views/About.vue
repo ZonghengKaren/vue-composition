@@ -28,8 +28,9 @@
                 state.aaa = 44444
             }
             onMounted(() => {
-                getList();
-                getList2();
+                // getList();
+                // getList2();
+                getList3();
             })
 
             let getList = async () => {
@@ -64,6 +65,19 @@
                         console.log(e);
                     })
                 console.log(4444444444444444);
+            }
+
+            let getList3 = () => {
+
+                //发送信息给服务端
+                root.$socket.emit('login',{
+                    username: 'username',
+                    password: 'password'
+                });
+                //
+                // root.sockets.subscribe('relogin', (data) => {
+                //     console.log(data)
+                // })
             }
             return {
                 ...toRefs(state),

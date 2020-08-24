@@ -41,6 +41,7 @@ const getRequestBasicParam = function (url, params){
             args += '&' + key + '=' + params[key];
         });
     }
+
     return process.env.VUE_APP_API_URL + url + '?plat=' + plat + '&srchn=' + srchn + '&timestamp=' + getTimestamp() + '&ukey=' + getUserUniqueKey() + args;
 }
 
