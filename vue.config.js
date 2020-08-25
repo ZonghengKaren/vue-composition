@@ -1,6 +1,6 @@
 module.exports = {
   // 生产模式修改资源路径
-  publicPath: process.env.NODE_ENV === 'production' ? '/vuetest' : '/',
+  publicPath: process.env.NODE_ENV === 'test' ? '/vuetest' : '/',
 
   // 生产模式不启用sourceMap
   productionSourceMap: false,
@@ -13,17 +13,5 @@ module.exports = {
       // host:'192.168.23.1',
       // port: 8080,
       hot: true,
-      proxy: {
-        '/socket.io': {
-          target: 'http://localhost:8888',
-          ws: true,
-          changeOrigin: true
-        },
-        'sockjs-node': {
-          target: 'http://localhost:8888',
-          ws: false,
-          changeOrigin: true
-        },
-      },
   },
 }
