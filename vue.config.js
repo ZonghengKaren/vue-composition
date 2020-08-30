@@ -14,4 +14,13 @@ module.exports = {
       // port: 8080,
       hot: true,
   },
+
+  //  webpack 配置
+  configureWebpack: {
+
+    // 不打包模块
+    externals: {
+      'vue-router': 'VueRouter'
+    }
+  }
 }
