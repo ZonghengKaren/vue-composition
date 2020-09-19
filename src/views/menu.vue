@@ -9,7 +9,7 @@
 
 <script>
     // @ is an alias to /src
-    import {reactive, toRefs} from '@vue/composition-api';
+    import { reactive, toRefs } from '@vue/composition-api';
     import MenuItem from "@/components/MenuItem.vue";
     import SubMenuItem from "@/components/SubMenuItem.vue";
 
