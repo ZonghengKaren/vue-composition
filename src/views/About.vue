@@ -36,7 +36,7 @@
                 console.log(prpos);
                 await root.$axios.get('/api/v1/cmm/hot/products',{size: 20, idx: 1, count: 20})
                     .then((res) => {
-                        console.log(res,11111111111);
+                        console.log(res,11111111114441);
                     })
                     .then(() => {
                         // console.log(4444);
